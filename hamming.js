@@ -1,14 +1,12 @@
 var hammingDistance = function(strandA, strandB) {
-  var length = Math.min(strandA.length, strandB.length)
-  ,   differences = 0
-  ,   index = 0
-
-  while (index < length) {
-    if (strandA[index] !== strandB[index])
+  var differences = 0
+  for(let i=0; (i<strandA.length && i<strandB.length); i++ ){
+    if (strandA[i] !== strandB[i]){
       differences += 1
-    index += 1
+    }
   }
-
   return differences
 }
+
+console.log(hammingDistance('abc', 'add'));
 module.exports = hammingDistance
